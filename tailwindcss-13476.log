@@ -1,0 +1,248 @@
+2025-12-08T16:41:37.691302Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2025-12-08T16:41:37.755056Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "G:\\GitHub\\command-generator", pattern: "**/*", negated: false }
+2025-12-08T16:41:37.785935Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2025-12-08T16:41:37.785962Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "G:\\GitHub\\command-generator" }
+2025-12-08T16:41:37.952675Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.002394Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:41:38.002614Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\globals.css"
+2025-12-08T16:41:38.002983Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\layout.tsx"
+2025-12-08T16:41:38.003069Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:41:38.003157Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\eslint.config.mjs"
+2025-12-08T16:41:38.003225Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\next.config.ts"
+2025-12-08T16:41:38.003467Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\package.json"
+2025-12-08T16:41:38.003540Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\postcss.config.mjs"
+2025-12-08T16:41:38.003634Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:41:38.003762Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public\\file.svg"
+2025-12-08T16:41:38.003822Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public\\globe.svg"
+2025-12-08T16:41:38.003882Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public\\next.svg"
+2025-12-08T16:41:38.003942Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public\\vercel.svg"
+2025-12-08T16:41:38.004000Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public\\window.svg"
+2025-12-08T16:41:38.004092Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\README.md"
+2025-12-08T16:41:38.004252Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\tsconfig.json"
+2025-12-08T16:41:38.004383Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.004395Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.004401Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.004404Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 13 file(s)
+2025-12-08T16:41:38.023291Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\postcss.config.mjs"
+2025-12-08T16:41:38.023278Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\package.json"
+2025-12-08T16:41:38.023279Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:41:38.023278Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\tsconfig.json"
+2025-12-08T16:41:38.023357Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\eslint.config.mjs"
+2025-12-08T16:41:38.023303Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\next.config.ts"
+2025-12-08T16:41:38.023344Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\public\\file.svg"
+2025-12-08T16:41:38.023278Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\layout.tsx"
+2025-12-08T16:41:38.049074Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\public\\window.svg"
+2025-12-08T16:41:38.049433Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\public\\vercel.svg"
+2025-12-08T16:41:38.067241Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\README.md"
+2025-12-08T16:41:38.067230Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\public\\globe.svg"
+2025-12-08T16:41:38.100644Z  INFO tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\public\\next.svg"
+2025-12-08T16:41:38.100782Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.100800Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.100805Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.101341Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.101360Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.101367Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.101374Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:41:38.101529Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\globals.css"
+2025-12-08T16:41:38.101540Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.101548Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.101551Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.101719Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.101733Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.102077Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.109066Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.109081Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.110500Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:41:38.111183Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:41:38.111564Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.111794Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.111884Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.111895Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:41:38.113213Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:41:38.113845Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:41:38.114252Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:41:38.116599Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.737666Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.739324Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:45:55.739552Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:45:55.739993Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:45:55.740558Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.740569Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.740574Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.740577Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:45:55.740701Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:45:55.740713Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.740718Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.740721Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.740989Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.740997Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.741136Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.741287Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.741294Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.742675Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:45:55.743323Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:45:55.743765Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.743915Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:45:55.744005Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:45:55.744012Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.774209Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.775533Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:47:14.775748Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:47:14.776173Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:47:14.776631Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.776642Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.776648Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.776651Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:47:14.776737Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:47:14.776747Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.776751Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.776754Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.777011Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.777026Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.777149Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.777340Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.777348Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.778449Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:47:14.778996Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:47:14.779363Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.779448Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:47:14.779528Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:47:14.779535Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.926886Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.929306Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:48:54.929650Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:48:54.930264Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:48:54.930865Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.930881Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.930888Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.930893Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:48:54.931004Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:48:54.931020Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.931027Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.931032Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.931222Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.931236Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.931393Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.931572Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.931580Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.932759Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:48:54.933418Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:48:54.933800Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.933883Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:48:54.933988Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:48:54.933997Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.158636Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.160339Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:53:25.160576Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:53:25.161014Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:53:25.161418Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.161429Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.161434Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.161437Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:53:25.161505Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:53:25.161516Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.161520Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.161523Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.161738Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.161751Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.161888Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.162066Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.162073Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.163199Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:53:25.163840Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:53:25.164268Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.164356Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:53:25.164439Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:53:25.164446Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.550867Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.552289Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:58:37.552513Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:58:37.553070Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:58:37.553523Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.553537Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.553543Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.553546Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T16:58:37.553632Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T16:58:37.553646Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.553651Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.553655Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.553929Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.553945Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.554124Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.554342Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.554349Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.555639Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T16:58:37.556435Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T16:58:37.556873Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.556983Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T16:58:37.557076Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T16:58:37.557083Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:46.257625Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.184525Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:45:47.184839Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\layout.tsx"
+2025-12-08T17:45:47.186223Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:45:47.209733Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.209769Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.209776Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.209780Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T17:45:47.238000Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\layout.tsx"
+2025-12-08T17:45:47.302289Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.302333Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.302341Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.370591Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.370650Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.371135Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.402326Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.402356Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.403627Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:45:47.404226Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:45:47.404588Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.416079Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:45:47.416245Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:45:47.416257Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.368348Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.370839Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:47:06.371048Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T17:47:06.371976Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:47:06.372344Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.372354Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.372359Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.372362Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T17:47:06.372423Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T17:47:06.372433Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.372437Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.372440Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.374393Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.374412Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.396433Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.397237Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.397250Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.398529Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:47:06.399103Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:47:06.399464Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.399621Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:06.399718Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:06.399727Z  INFO get_globs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.743929Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.745251Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:47:21.745538Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T17:47:21.745945Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:47:21.746332Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.746344Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.746349Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.746353Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-12-08T17:47:21.746419Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "G:\\GitHub\\command-generator\\app\\page.tsx"
+2025-12-08T17:47:21.746430Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.746435Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.746438Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.746683Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.746697Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.747253Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.747462Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.747469Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.748973Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\app"
+2025-12-08T17:47:21.749517Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "G:\\GitHub\\command-generator\\public"
+2025-12-08T17:47:21.749864Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.749988Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-12-08T17:47:21.750047Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-12-08T17:47:21.750055Z  INFO get_globs: tailwindcss_oxide::scanner: exit
