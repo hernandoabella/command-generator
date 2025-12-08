@@ -1,150 +1,272 @@
 "use client";
 
-import { useState } from "react";
-import { Copy, Clock } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
+import { Copy, Clock, Calendar, Zap, Check } from "lucide-react";
 import Sidebar from "../components/SideBar";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function CronGenerator() {
-  const [interval, setInterval] = useState("");
-  const [command, setCommand] = useState("");
-  const [cron, setCron] = useState("");
-
-  const cronPresets: Record<
+// --- Data Constants ---
+const CRON_PRESETS: Record<
     string,
     { value: string; description: string; example: string }
-  > = {
+> = {
     "every-minute": {
-      value: "* * * * *",
-      description: "Runs every minute.",
-      example: "*/1 * * * * /usr/bin/php /var/www/artisan schedule:run",
+        value: "* * * * *",
+        description: "Runs every minute. Be cautious, this can overload systems.",
+        example: "*/1 * * * * /usr/bin/php /var/www/artisan schedule:run",
     },
     "every-5-min": {
-      value: "*/5 * * * *",
-      description: "Runs every 5 minutes.",
-      example: "*/5 * * * * curl https://yourapi.com/ping",
+        value: "*/5 * * * *",
+        description: "Runs every 5 minutes. Ideal for periodic checks.",
+        example: "*/5 * * * * curl https://yourapi.com/ping",
     },
     hourly: {
-      value: "0 * * * *",
-      description: "Runs at the start of every hour.",
-      example: "0 * * * * systemctl restart nginx",
+        value: "0 * * * *",
+        description: "Runs at the beginning of every hour (e.g., 01:00, 02:00).",
+        example: "0 * * * * systemctl restart nginx",
     },
     daily: {
-      value: "0 0 * * *",
-      description: "Runs every day at midnight.",
-      example: "0 0 * * * backup.sh",
+        value: "0 0 * * *",
+        description: "Runs every day at midnight (00:00).",
+        example: "0 0 * * * backup.sh",
     },
     weekly: {
-      value: "0 0 * * 0",
-      description: "Runs every Sunday at midnight.",
-      example: "0 0 * * 0 certbot renew --quiet",
+        value: "0 0 * * 0",
+        description: "Runs every Sunday at midnight (00:00). Sunday is day '0' or '7'.",
+        example: "0 0 * * 0 certbot renew --quiet",
     },
     monthly: {
-      value: "0 0 1 * *",
-      description: "Runs on the 1st day of every month.",
-      example: "0 0 1 * * logrotate /etc/logrotate.conf",
+        value: "0 0 1 * *",
+        description: "Runs on the 1st day of every month at midnight.",
+        example: "0 0 1 * * logrotate /etc/logrotate.conf",
     },
     yearly: {
-      value: "0 0 1 1 *",
-      description: "Runs every January 1st at midnight.",
-      example: "0 0 1 1 * echo 'Happy New Year!'",
+        value: "0 0 1 1 *",
+        description: "Runs every January 1st at midnight.",
+        example: "0 0 1 1 * echo 'Happy New Year!'",
     },
     "@reboot": {
-      value: "@reboot",
-      description: "Runs once at system startup.",
-      example: "@reboot docker start my_container",
+        value: "@reboot",
+        description: "Non-standard, runs once when the system starts up.",
+        example: "@reboot docker start my_container",
     },
-  };
+};
 
-  const generate = () => {
-    if (!interval || !command) return;
-    setCron(`${cronPresets[interval].value} ${command}`);
-  };
+// --- Component ---
 
-  const copy = () => navigator.clipboard.writeText(cron);
+export default function CronGenerator() {
+    const [interval, setInterval] = useState("daily"); // Set a default interval
+    const [command, setCommand] = useState("/usr/bin/php /var/www/artisan schedule:run"); // Default command
+    const [cron, setCron] = useState("");
+    const [copied, setCopied] = useState(false);
 
-  return (
-    <div className="flex min-h-screen bg-white dark:bg-black">
+    // Initial command generation and update on state change
+    useEffect(() => {
+        if (interval && command) {
+            const preset = CRON_PRESETS[interval];
+            const newCron = `${preset.value} ${command}`.trim();
+            setCron(newCron);
+        } else {
+            setCron("");
+        }
+    }, [interval, command]);
 
-      {/* Sidebar Fijo */}
-      <div className="fixed left-0 top-0 h-full">
-        <Sidebar />
-      </div>
+    const copyToClipboard = useCallback(async () => {
+        if (!cron) return;
+        try {
+            await navigator.clipboard.writeText(cron);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch (err) {
+            console.error("Failed to copy:", err);
+        }
+    }, [cron]);
 
-      {/* MAIN CONTENT */}
-      <main className="ml-[260px] w-full p-10 max-w-3xl">
 
-        <div className="flex items-center gap-3 mb-8">
-          <Clock className="w-6 h-6 text-black dark:text-white" />
-          <h1 className="text-3xl font-bold">Cronjob Generator</h1>
+    // Simplified generation for the button, though it's already generated by useEffect
+    const generate = () => {
+        // Force update cron output (useful if command changes without interval changing)
+        const preset = CRON_PRESETS[interval];
+        if (preset && command) {
+             setCron(`${preset.value} ${command}`.trim());
+        }
+    };
+
+    return (
+        // Dark Mode Base Styling
+        <div className="flex min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 text-gray-100">
+
+            {/* Note: In a real Next.js/React app, Sidebar placement should be consistent.
+                I'm keeping the original fixed structure for this demonstration. */}
+            <div className="fixed left-0 top-0 h-full">
+                <Sidebar />
+            </div>
+
+            {/* MAIN CONTENT */}
+            {/* Adjusted margin for Sidebar */}
+            <main className="ml-[260px] w-full p-6 md:p-10 max-w-4xl">
+
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-10">
+                    <div className="p-3 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-xl shadow-lg">
+                        <Clock className="w-6 h-6 text-white" />
+                    </div>
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
+                        Cronjob Schedule Generator
+                    </h1>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                    {/* LEFT COLUMN: INTERVAL SELECTION */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="bg-gray-800 rounded-2xl border border-gray-700 p-6 shadow-xl h-full"
+                    >
+                        <h2 className="text-xl font-semibold text-gray-200 mb-4 flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-400" /> 
+                            1. Select Run Interval
+                        </h2>
+
+                        <label className="block mb-2 font-medium text-gray-400">Execution Frequency</label>
+                        <select
+                            className="w-full p-3 rounded-xl border border-gray-700 bg-gray-900 text-white focus:ring-2 focus:ring-indigo-500 transition-shadow appearance-none"
+                            value={interval}
+                            onChange={(e) => setInterval(e.target.value)}
+                        >
+                            {Object.entries(CRON_PRESETS).map(([key, preset]) => (
+                                <option key={key} value={key}>
+                                    {preset.description.split('.')[0]} ({preset.value})
+                                </option>
+                            ))}
+                        </select>
+                        
+                        {/* DESCRIPTION + EXAMPLE */}
+                        {interval && CRON_PRESETS[interval] && (
+                            <motion.div
+                                key={interval}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="mt-6 bg-gray-900 border border-gray-700 p-4 rounded-xl"
+                            >
+                                <p className="text-sm text-indigo-400 mb-2 font-semibold">
+                                    Pattern: <code className="text-sm font-mono text-white">{CRON_PRESETS[interval].value}</code>
+                                </p>
+                                <p className="text-sm text-gray-400">
+                                    {CRON_PRESETS[interval].description}
+                                </p>
+                                <p className="text-xs text-gray-500 mt-3 border-t border-gray-700 pt-3">
+                                    <span className="font-semibold text-gray-300">
+                                        Example:
+                                    </span>
+                                    <br />
+                                    <code className="text-xs text-gray-400 break-all">{CRON_PRESETS[interval].example}</code>
+                                </p>
+                            </motion.div>
+                        )}
+                    </motion.div>
+
+                    {/* RIGHT COLUMN: COMMAND INPUT */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="bg-gray-800 rounded-2xl border border-gray-700 p-6 shadow-xl h-full flex flex-col justify-between"
+                    >
+                        <div>
+                            <h2 className="text-xl font-semibold text-gray-200 mb-4 flex items-center gap-2">
+                                <Zap className="w-5 h-5 text-amber-400" />
+                                2. Define Command
+                            </h2>
+
+                            <label className="block mb-2 font-medium text-gray-400">
+                                Full command path to execute
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="e.g., /path/to/script.sh"
+                                className="w-full p-3 rounded-xl border border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-amber-500 transition-shadow"
+                                value={command}
+                                onChange={(e) => setCommand(e.target.value)}
+                            />
+
+                            <button
+                                onClick={generate}
+                                className="w-full py-3 mt-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/30"
+                            >
+                                Generate Full Cronjob String
+                            </button>
+                        </div>
+
+                        {/* CRON STRUCTURE EXPLANATION */}
+                        <div className="mt-6 pt-6 border-t border-gray-700">
+                            <h3 className="text-sm font-semibold text-gray-400 mb-2">Cron Syntax Breakdown</h3>
+                            <div className="bg-gray-900 p-3 rounded-lg font-mono text-xs text-gray-300 overflow-x-auto">
+                                <span className="text-red-400">m</span> <span className="text-orange-400">h</span> <span className="text-yellow-400">dom</span> <span className="text-green-400">mon</span> <span className="text-blue-400">dow</span> <span className="text-gray-400">command</span>
+                                <p className="text-xs text-gray-500 mt-1">
+                                    (Minute Hour Day-of-Month Month Day-of-Week)
+                                </p>
+                            </div>
+                            {/* Diagram Trigger */}
+                            
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* OUTPUT SECTION */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-8 p-6 bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-indigo-700 shadow-2xl"
+                >
+                    <h2 className="text-xl font-semibold text-gray-200 mb-4">3. Final Cron Command</h2>
+
+                    {/* Output Box */}
+                    <div className="relative group">
+                        <div className="bg-gray-900 rounded-xl p-4 border border-indigo-500 shadow-lg shadow-indigo-900/50">
+                            <code className="text-gray-100 font-mono text-sm md:text-base block pr-16 overflow-x-auto">
+                                <span className="text-gray-500 select-none">$ </span>
+                                {cron || "Select an interval and enter a command above."}
+                            </code>
+                        </div>
+
+                        {/* Copy Button */}
+                        {cron && (
+                            <motion.button
+                                onClick={copyToClipboard}
+                                className={`absolute top-1/2 -translate-y-1/2 right-3 p-3 rounded-full transition-all flex items-center justify-center ${copied 
+                                    ? "bg-emerald-600 text-white" 
+                                    : "bg-indigo-600 text-white hover:bg-indigo-500"
+                                }`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                title="Copy to clipboard"
+                            >
+                                <AnimatePresence mode="wait">
+                                    {copied ? (
+                                        <motion.div
+                                            key="check"
+                                            initial={{ opacity: 0, scale: 0.5 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.5 }}
+                                        >
+                                            <Check size={20} />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="copy"
+                                            initial={{ opacity: 0, scale: 0.5 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.5 }}
+                                        >
+                                            <Copy size={20} />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.button>
+                        )}
+                    </div>
+                </motion.div>
+            </main>
         </div>
-
-        {/* INTERVAL SELECT */}
-        <label className="block mb-2 font-semibold text-sm">Interval</label>
-        <select
-          className="w-full p-3 rounded-lg border mb-4 dark:bg-zinc-900 dark:border-zinc-700"
-          value={interval}
-          onChange={(e) => setInterval(e.target.value)}
-        >
-          <option value="">Select interval</option>
-          <option value="every-minute">Every minute</option>
-          <option value="every-5-min">Every 5 minutes</option>
-          <option value="hourly">Hourly</option>
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="@reboot">On system startup (@reboot)</option>
-        </select>
-
-        {/* DESCRIPTION + EXAMPLE */}
-        {interval && (
-          <div className="mb-6 bg-zinc-100 dark:bg-zinc-900 p-4 rounded-xl">
-            <p className="text-sm text-zinc-700 dark:text-zinc-400 mb-2 font-semibold">
-              {cronPresets[interval].description}
-            </p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-500">
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">
-                Example:
-              </span>
-              <br />
-              <code className="text-xs">{cronPresets[interval].example}</code>
-            </p>
-          </div>
-        )}
-
-        {/* COMMAND INPUT */}
-        <label className="block mb-2 font-semibold text-sm">
-          Command to execute
-        </label>
-        <input
-          type="text"
-          placeholder="e.g., php artisan schedule:run"
-          className="w-full p-3 rounded-lg border mb-6 dark:bg-zinc-900 dark:border-zinc-700"
-          value={command}
-          onChange={(e) => setCommand(e.target.value)}
-        />
-
-        {/* GENERATE BUTTON */}
-        <button
-          onClick={generate}
-          className="w-full py-3 mb-6 bg-black text-white dark:bg-white dark:text-black rounded-xl font-semibold hover:opacity-80 transition"
-        >
-          Generate Cronjob ✅
-        </button>
-
-        {/* OUTPUT */}
-        {cron && (
-          <div className="relative bg-zinc-100 dark:bg-zinc-900 p-4 rounded-xl font-mono text-sm">
-            <button
-              onClick={copy}
-              className="absolute top-2 right-2 p-2 bg-black text-white dark:bg-white dark:text-black rounded-lg hover:scale-105 transition"
-            >
-              <Copy size={16} />
-            </button>
-            <pre>{cron}</pre>
-          </div>
-        )}
-      </main>
-    </div>
-  );
+    );
 }
