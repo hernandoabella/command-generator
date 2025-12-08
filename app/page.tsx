@@ -1,10 +1,10 @@
-import SideBar from "./components/SideBar";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
     <div>
       <main>
-      <SideBar />
+        <Hero />
       </main>
     </div>
   );
