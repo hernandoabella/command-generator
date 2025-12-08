@@ -25,6 +25,7 @@ const sidebarItems = [
   { label: "192.168.1.1", href: "/", icon: <FaHome /> },
   { label: "Bash", href: "/bash", icon: <FaTerminal /> },
   { label: "chmod", href: "/chmod", icon: <FaShieldAlt /> },
+  { label: "chown", href: "/chown", icon: <FaServer /> },
   { label: "Cronjobs", href: "/cronjobs", icon: <FaClock /> },
   { label: "Git", href: "/git", icon: <FaGit /> },
   { label: "Docker", href: "/docker", icon: <FaDocker /> },
@@ -33,6 +34,10 @@ const sidebarItems = [
   { label: "SSH", href: "/ssh", icon: <FaShieldAlt /> }, // Reusing FaShieldAlt for simplicity
   { label: "TMUX", href: "/tmux", icon: <FaColumns /> },
   { label: "systemctl", href: "/systemctl", icon: <FaServer /> },
+  { label: "rsync", href: "/rsync", icon: <FaServer /> },
+  { label: "grep", href: "/grep", icon: <FaServer /> },
+  { label: "sed and awk", href: "/sed-and-awk", icon: <FaServer /> },
+  { label: "nginx", href: "/nginx", icon: <FaServer /> },
 ];
 
 export default function SimpleSidebar() {
