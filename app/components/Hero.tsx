@@ -73,11 +73,11 @@ export default function DashboardPage() {
             <Sidebar />
 
             {/* 2. Main content area - Takes remaining width, allows vertical scrolling */}
-            <main className="ml-0 lg:ml-64 flex-1 w-full h-full overflow-y-auto p-4 md:p-8">
-                
+            <main className="ml-0 flex-1 w-full h-full overflow-y-auto p-4 md:p-8">
+
                 {/* Content Wrapper */}
                 <div className="max-w-7xl mx-auto">
-                    
+
                     {/* Hero Section */}
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
@@ -101,9 +101,9 @@ export default function DashboardPage() {
                                             </h1>
                                         </div>
                                     </div>
-                                    
+
                                     <p className="text-gray-400 text-base md:text-lg mb-6 max-w-3xl">
-                                        A comprehensive collection of tools to generate, learn, and master command-line utilities. 
+                                        A comprehensive collection of tools to generate, learn, and master command-line utilities.
                                         From Bash to Docker, we've got your development workflow covered.
                                     </p>
 
@@ -117,7 +117,7 @@ export default function DashboardPage() {
                                             <FaRocket className="text-sm" />
                                             Start Generating
                                         </motion.a>
-                                        
+
                                         <motion.a
                                             href="https://github.com/hernandoabella/command-generator"
                                             target="_blank"
@@ -161,15 +161,6 @@ export default function DashboardPage() {
 
                     {/* Tools Grid */}
                     <section className="mb-8 md:mb-10">
-                        <div className="text-center mb-6">
-                            <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
-                                Explore Our Tools 🛠️
-                            </h2>
-                            <p className="text-gray-400 max-w-2xl mx-auto text-sm">
-                                Select a tool to start generating commands and learning best practices
-                            </p>
-                        </div>
-
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {toolCards.map((tool) => (
                                 <motion.a
@@ -193,14 +184,14 @@ export default function DashboardPage() {
                                                 </svg>
                                             </div>
                                         </div>
-                                        
+
                                         <h3 className="text-lg font-bold text-white mb-1">
                                             {tool.title}
                                         </h3>
                                         <p className="text-gray-400 text-sm mb-3">
                                             {tool.description}
                                         </p>
-                                        
+
                                         <div className="flex items-center justify-between mt-3">
                                             <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-700 text-gray-300">
                                                 Go to Tool
@@ -213,33 +204,6 @@ export default function DashboardPage() {
                         </div>
                     </section>
 
-                    {/* Stats Section */}
-                    <motion.section
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                        className="mb-8" // Added bottom margin for spacing at the end of scroll
-                    >
-                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 md:p-8 shadow-2xl border border-gray-800">
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                {[
-                                    { label: "Commands", value: "500", suffix: "+" },
-                                    { label: "Tools", value: "6", suffix: "" },
-                                    { label: "Hours Saved", value: "100", suffix: "+" },
-                                    { label: "Best Practices", value: "Built-in", suffix: "" },
-                                ].map((stat) => (
-                                    <div key={stat.label} className="text-center">
-                                        <div className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-1">
-                                            {stat.value}<span className="text-white/50">{stat.suffix}</span>
-                                        </div>
-                                        <div className="text-gray-400 text-xs font-medium uppercase tracking-wider">
-                                            {stat.label}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.section>
                 </div>
             </main>
         </div>
