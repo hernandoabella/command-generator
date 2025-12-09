@@ -97,7 +97,7 @@ export default function DashboardPage() {
                                                 Developer Tools Suite
                                             </span>
                                             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                                                Command Generator
+                                                Command Toolkit
                                             </h1>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ export default function DashboardPage() {
 
                                     <div className="flex flex-wrap gap-3">
                                         <motion.a
-                                            href="/bash-command-generator"
+                                            href="/bash"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold px-5 py-2 md:py-3 rounded-xl shadow-lg hover:shadow-xl transition-all hover:from-teal-600 hover:to-cyan-700 text-sm"
