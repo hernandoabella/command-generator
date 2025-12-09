@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Sidebar from "../components/SideBar";
 import { Copy, Download, Check, ChevronDown, ChevronUp } from "lucide-react";
 
 /* ------------------------------
@@ -11,22 +12,6 @@ interface CopyableProps {
   onCopy: (text: string) => void;
   commandName: string;
 }
-
-/* ------------------------------
-   Sidebar Component
---------------------------------*/
-const Sidebar = () => {
-  return (
-    <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 bg-gray-900 border-r border-gray-800 p-6">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="p-2 bg-orange-600 rounded-lg">
-          <Download className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-lg font-bold text-white">DevTools</span>
-      </div>
-    </aside>
-  );
-};
 
 /* ------------------------------
    CopyableCommand Component
