@@ -284,7 +284,7 @@ export default function BashCommandGenerator() {
         <div className="flex min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 text-gray-100">
             <Sidebar />
 
-            <main className="ml-0 lg:ml-64 w-full min-h-screen p-4 md:p-6 lg:p-8">
+            <main className="ml-0  w-full min-h-screen p-4 md:p-6 lg:p-8">
                 <div className="max-w-6xl mx-auto">
                     
                     {/* Header */}
