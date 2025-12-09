@@ -88,7 +88,7 @@ export const categorizedItems: SidebarCategory[] = [
     items: [
       { label: "chmod", href: "/chmod", icon: <FaShieldAlt /> },
       { label: "chown", href: "/chown", icon: <FaShieldAlt /> },
-      { label: "User Management", href: "/linux-user-management", icon: <FaUserCog /> },
+      { label: "User Management", href: "/linux-user-managment", icon: <FaUserCog /> },
       { label: "SSH", href: "/ssh", icon: <FaShieldAlt /> },
     ],
   },
