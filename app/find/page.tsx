@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 // Asegúrate de que la ruta al Sidebar sea correcta según tu estructura de archivos
-import Sidebar from "../components/SideBar"; 
+import Sidebar from "../components/SideBar";
 import { Copy, FolderSearch, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -71,7 +71,7 @@ export default function FindCommandGenerator() {
         if (fileType) {
             cmd += ` -type ${fileType}`;
         }
-        
+
         // 3. Time Filter
         if (timeType && timeValue.trim()) {
             // Assumes a numerical value for days ago (e.g., +7, -3)
@@ -86,12 +86,12 @@ export default function FindCommandGenerator() {
         } else if (action === '-delete' || action === '-print') {
             cmd += ` ${action}`;
         } else {
-             // Default to print if no specific action is selected and not using -exec
+            // Default to print if no specific action is selected and not using -exec
             if (!action) {
-                 cmd += ` -print`;
+                cmd += ` -print`;
             }
         }
-        
+
         // Final command cleanup
         setGeneratedCommand(cmd.trim().replace(/\s+/g, ' '));
     }, [directory, fileName, fileType, timeType, timeValue, action, execCommand]);
@@ -113,7 +113,7 @@ export default function FindCommandGenerator() {
     const containerBaseClasses = "bg-gray-800 rounded-2xl border border-gray-700 p-6 shadow-xl";
     const selectBaseClasses = "w-full p-3 rounded-lg border border-gray-700 bg-gray-900 text-white focus:ring-2 focus:ring-fuchsia-500 transition-shadow outline-none appearance-none cursor-pointer";
     const optionBaseClasses = "bg-gray-900 text-white";
-    
+
 
     return (
         // Dark Mode Base Styling
@@ -121,7 +121,7 @@ export default function FindCommandGenerator() {
             <Sidebar />
 
             <main className="ml-0 lg:ml-64 p-6 md:p-10 w-full max-w-6xl mx-auto pt-20 lg:pt-10">
-                
+
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -160,7 +160,7 @@ export default function FindCommandGenerator() {
                                 <input type="text" placeholder="*.log or index.html" value={fileName} onChange={(e) => setFileName(e.target.value)} className={inputBaseClasses} />
                                 <p className="text-xs text-gray-500 mt-1">Case-insensitive. Use `*` for wildcards.</p>
                             </div>
-                            
+
                             {/* File Type */}
                             <div>
                                 <label className={labelBaseClasses}>File Type (`-type`)</label>
@@ -174,7 +174,7 @@ export default function FindCommandGenerator() {
                                     <ChevronDown className="absolute right-3 top-3.5 h-5 w-5 text-gray-500 pointer-events-none" />
                                 </div>
                             </div>
-                            
+
                             {/* Time Filters */}
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="col-span-1">
@@ -206,7 +206,7 @@ export default function FindCommandGenerator() {
                         className={`${containerBaseClasses} h-full flex flex-col`}
                     >
                         <h2 className="text-xl font-semibold text-gray-200 mb-6">Action & Command</h2>
-                        
+
                         {/* Action Selection */}
                         <div className="mb-6">
                             <label className={labelBaseClasses}>Action to Perform on Match</label>
@@ -231,14 +231,14 @@ export default function FindCommandGenerator() {
                                 className="relative mb-6"
                             >
                                 <label className={labelBaseClasses}>Command to Execute (`-exec`)</label>
-                                <input 
-                                    type="text" 
-                                    placeholder="chmod 777 {}" 
-                                    value={execCommand} 
-                                    onChange={(e) => setExecCommand(e.target.value)} 
-                                    className={inputBaseClasses} 
+                                <input
+                                    type="text"
+                                    placeholder="chmod 777 {}"
+                                    value={execCommand}
+                                    onChange={(e) => setExecCommand(e.target.value)}
+                                    className={inputBaseClasses}
                                 />
-                                <p className="text-xs text-gray-500 mt-1">Use **`{}`** as a placeholder for the found filename.</p>
+                                <p className="text-xs text-gray-500 mt-1">Use **`{ }`** as a placeholder for the found filename.</p>
                             </motion.div>
                         )}
 
@@ -264,7 +264,7 @@ export default function FindCommandGenerator() {
                         </div>
                     </motion.div>
                 </div>
-                
+
                 {/* --- Reference Guide --- */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -272,7 +272,7 @@ export default function FindCommandGenerator() {
                     transition={{ delay: 0.2 }}
                     className={`${containerBaseClasses}`}
                 >
-                    <div 
+                    <div
                         className="flex justify-between items-center cursor-pointer"
                         onClick={() => setIsGuideOpen(!isGuideOpen)}
                     >
@@ -291,7 +291,7 @@ export default function FindCommandGenerator() {
                                 transition={{ duration: 0.3 }}
                                 className="mt-4 pt-4 border-t border-gray-700 overflow-hidden space-y-4 text-sm text-gray-300"
                             >
-                                
+
                                 <h3 className="font-semibold text-lg text-white mt-4">Key Syntax and Actions</h3>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="bg-gray-900 p-4 rounded-xl border border-fuchsia-700/50">
@@ -309,7 +309,7 @@ export default function FindCommandGenerator() {
                                         <p className="text-gray-400 mb-2 mt-3">Find directories and change permissions:</p>
                                         <CopyableCommand command="find . -type d -exec chmod 755 {} \\;" onCopy={copyToClipboard} />
                                     </div>
-                                    
+
                                     <div className="bg-gray-900 p-4 rounded-xl border border-fuchsia-700/50 md:col-span-2">
                                         <p className="font-medium text-fuchsia-300">Safety & Logic (`-o`, `!`, `-maxdepth`)</p>
                                         <p className="text-gray-400 mb-2">Find files older than 30 days (`+30`) but ignore a specific sub-directory (`-path`).</p>
