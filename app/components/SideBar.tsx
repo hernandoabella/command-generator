@@ -37,82 +37,103 @@ interface SidebarCategory {
     items: SidebarItem[];
 }
 
-const categorizedItems: SidebarCategory[] = [
-    {
-        name: "Essentials",
-        icon: <FaHome />,
-        items: [{ label: "Home", href: "/", icon: <FaHome /> }],
-    },
-    {
-        name: "Core Linux/Unix",
-        icon: <FaTerminal />,
-        items: [
-            { label: "Bash", href: "/bash", icon: <FaTerminal /> },
-            { label: "TMUX", href: "/tmux", icon: <FaColumns /> },
-            { label: "Cronjobs", href: "/cronjobs", icon: <FaClock /> },
-            { label: "systemctl", href: "/systemctl", icon: <FaServer /> },
-            { label: "cat / echo", href: "/cat-echo", icon: <FaTerminal /> },
-            { label: "find", href: "/find", icon: <FaFolderOpen /> },
-        ],
-    },
-    {
-        name: "Text/File Processing",
-        icon: <FaExchangeAlt />,
-        items: [
-            { label: "grep", href: "/grep", icon: <FaExchangeAlt /> },
-            { label: "sed and awk", href: "/sed-and-awk", icon: <FaExchangeAlt /> },
-            { label: "cut / paste", href: "/cut-paste", icon: <FaColumns /> },
-            { label: "sort / uniq", href: "/sort-uniq", icon: <FaExchangeAlt /> },
-        ],
-    },
-    {
-        name: "Networking",
-        icon: <FaNetworkWired />,
-        items: [
-            { label: "netstat / ss", href: "/netstat-ss", icon: <FaNetworkWired /> },
-            { label: "curl / wget", href: "/curl-wget", icon: <FaServer /> },
-            { label: "ip / ifconfig", href: "/ip-ifconfig", icon: <FaNetworkWired /> },
-        ],
-    },
-    {
-        name: "Permissions & Users",
-        icon: <FaShieldAlt />,
-        items: [
-            { label: "chmod", href: "/chmod", icon: <FaShieldAlt /> },
-            { label: "chown", href: "/chown", icon: <FaShieldAlt /> },
-            { label: "User Management", href: "/linux-user-management", icon: <FaUserCog /> },
-            { label: "SSH", href: "/ssh", icon: <FaShieldAlt /> },
-        ],
-    },
-    {
-        name: "Archiving & Compression",
-        icon: <FaFileArchive />,
-        items: [
-            { label: "tar", href: "/tar", icon: <FaFileArchive /> },
-            { label: "gzip / bzip2", href: "/gzip-bzip2", icon: <FaFileArchive /> },
-            { label: "zip / unzip", href: "/zip-unzip", icon: <FaFileArchive /> },
-        ],
-    },
-    {
-        name: "Monitoring & Utilities",
-        icon: <FaChartBar />,
-        items: [
-            { label: "top / htop", href: "/top-htop", icon: <FaChartBar /> },
-            { label: "df / du", href: "/df-du", icon: <FaFolderOpen /> },
-            { label: "journalctl", href: "/journalctl", icon: <FaClock /> },
-        ],
-    },
-    {
-        name: "DevOps/Containers",
-        icon: <FaDocker />,
-        items: [
-            { label: "Git", href: "/git", icon: <FaGit /> },
-            { label: "Docker CLI", href: "/docker", icon: <FaDocker /> },
-            { label: "Dockerfile", href: "/dockerfile", icon: <FaCogs /> },
-            { label: "nginx", href: "/nginx", icon: <FaServer /> },
-        ],
-    },
+import { 
+ FaCloud 
+} from "react-icons/fa";
+import { IoSettings, IoStatsChart } from "react-icons/io5";
+
+export const categorizedItems: SidebarCategory[] = [
+  {
+    name: "Essentials",
+    icon: <FaHome />,
+    items: [{ label: "Home", href: "/", icon: <FaHome /> }],
+  },
+  {
+    name: "Core Linux/Unix",
+    icon: <FaTerminal />,
+    items: [
+      { label: "Bash", href: "/bash", icon: <FaTerminal /> },
+      { label: "TMUX", href: "/tmux", icon: <FaColumns /> },
+      { label: "Cronjobs", href: "/cronjobs", icon: <FaClock /> },
+      { label: "systemctl", href: "/systemctl", icon: <FaServer /> },
+      { label: "cat / echo", href: "/cat-echo", icon: <FaTerminal /> },
+      { label: "find", href: "/find", icon: <FaFolderOpen /> },
+      { label: "Process Management", href: "/processes", icon: <IoSettings /> },
+    ],
+  },
+  {
+    name: "Text/File Processing",
+    icon: <FaExchangeAlt />,
+    items: [
+      { label: "grep", href: "/grep", icon: <FaExchangeAlt /> },
+      { label: "sed / awk", href: "/sed-and-awk", icon: <FaExchangeAlt /> },
+      { label: "cut / paste", href: "/cut-paste", icon: <FaColumns /> },
+      { label: "sort / uniq", href: "/sort-uniq", icon: <FaExchangeAlt /> },
+    ],
+  },
+  {
+    name: "Networking",
+    icon: <FaNetworkWired />,
+    items: [
+      { label: "netstat / ss", href: "/netstat-ss", icon: <FaNetworkWired /> },
+      { label: "curl / wget", href: "/curl-wget", icon: <FaServer /> },
+      { label: "ip / ifconfig", href: "/ip-ifconfig", icon: <FaNetworkWired /> },
+      { label: "Ping / Traceroute", href: "/ping-traceroute", icon: <IoStatsChart /> },
+      { label: "DNS Tools", href: "/dns-tools", icon: <IoStatsChart /> },
+    ],
+  },
+  {
+    name: "Permissions & Users",
+    icon: <FaShieldAlt />,
+    items: [
+      { label: "chmod", href: "/chmod", icon: <FaShieldAlt /> },
+      { label: "chown", href: "/chown", icon: <FaShieldAlt /> },
+      { label: "User Management", href: "/linux-user-management", icon: <FaUserCog /> },
+      { label: "SSH", href: "/ssh", icon: <FaShieldAlt /> },
+    ],
+  },
+  {
+    name: "Package Management",
+    icon: <FaCogs />,
+    items: [
+      { label: "apt / dpkg", href: "/apt-dpkg", icon: <FaCogs /> },
+      { label: "yum / rpm", href: "/yum-rpm", icon: <FaCogs /> },
+    ],
+  },
+  {
+    name: "Archiving & Compression",
+    icon: <FaFileArchive />,
+    items: [
+      { label: "tar", href: "/tar", icon: <FaFileArchive /> },
+      { label: "gzip / bzip2", href: "/gzip-bzip2", icon: <FaFileArchive /> },
+      { label: "zip / unzip", href: "/zip-unzip", icon: <FaFileArchive /> },
+    ],
+  },
+  {
+    name: "Monitoring & Utilities",
+    icon: <FaChartBar />,
+    items: [
+      { label: "top / htop", href: "/top-htop", icon: <FaChartBar /> },
+      { label: "df / du", href: "/df-du", icon: <FaFolderOpen /> },
+      { label: "journalctl", href: "/journalctl", icon: <FaClock /> },
+      { label: "Logs & Debugging", href: "/logs-debugging", icon: <IoStatsChart /> },
+      { label: "System Info", href: "/system-info", icon: <IoStatsChart /> },
+    ],
+  },
+  {
+    name: "DevOps / Containers",
+    icon: <FaDocker />,
+    items: [
+      { label: "Git", href: "/git", icon: <FaGit /> },
+      { label: "Docker CLI", href: "/docker", icon: <FaDocker /> },
+      { label: "Dockerfile", href: "/dockerfile", icon: <FaCogs /> },
+      { label: "Docker Compose", href: "/docker-compose", icon: <FaCogs /> },
+      { label: "nginx", href: "/nginx", icon: <FaServer /> },
+      { label: "Kubernetes", href: "/kubernetes", icon: <FaCloud /> },
+    ],
+  },
 ];
+
 
 export default function SimpleSidebar() {
     const pathname = usePathname();
@@ -148,10 +169,10 @@ export default function SimpleSidebar() {
                         </div>
                         <div>
                             <h1 className="font-bold text-lg text-gray-100">
-                                Command Generator
+                                Command Toolbox
                             </h1>
                             <p className="text-xs text-gray-400 font-medium">
-                                Linux & DevOps
+                                Useful for command nerds
                             </p>
                         </div>
                     </div>
